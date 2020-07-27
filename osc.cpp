@@ -129,7 +129,8 @@ int32_t oscSend(char oscPacket[], char oscAddressPattern[], protocol_t protocol)
 	strcpy(oscMessage, oscAddressPattern);
 	oscAddressPatternLength = strlen(oscMessage);
 	int32_t oscTypeStart = oscAddressPatternLength + 4 - (oscAddressPatternLength % 4);
-	int32_t oscMessageLength = oscTypeStart;
+	oscMessage[oscTypeStart] = ',';
+	int32_t oscMessageLength = oscTypeStart + 4;
 	if (protocol == TCP10) {
 		oscMessageLength = tcpSend(oscMessage, oscMessageLength);
 		}
