@@ -72,11 +72,11 @@ typedef enum flagType {
 	I
 } flag_t;
 
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], int32_t value, protocol_t protocol = UDPOSC);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], float value, protocol_t protocol = UDPOSC);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], char string[], protocol_t protocol = UDPOSC);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], flag_t flag, protocol_t protocol = UDPOSC);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], const char oscAddressPattern[], int32_t value, protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], const char oscAddressPattern[], float value, protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], const char oscAddressPattern[], char string[], protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], const char oscAddressPattern[], flag_t flag, protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], const char oscAddressPattern[], protocol_t protocol = UDPOSC);
 int32_t slipSend(char message[], int32_t messageLength);
 int32_t tcpSend(char message[], int32_t messageLength);
 
