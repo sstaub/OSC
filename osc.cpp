@@ -24,7 +24,7 @@
 
 #include "osc.h"
 
-int32_t oscSend(char oscPacket[], const char oscAddressPattern[], int32_t value, protocol_t protocol) {
+int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], int32_t value, protocol_t protocol) {
 	char oscMessage[128];
 	memset (oscMessage, 0, 128);
 	int32_t oscAddressPatternLength;
@@ -49,7 +49,7 @@ int32_t oscSend(char oscPacket[], const char oscAddressPattern[], int32_t value,
 	return oscMessageLength;
 	}
 
-int32_t oscSend(char oscPacket[], const char oscAddressPattern[], float value, protocol_t protocol) {
+int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], float value, protocol_t protocol) {
 	char oscMessage[128];
 	memset (oscMessage, 0, 128);
 	int32_t oscAddressPatternLength;
@@ -74,7 +74,7 @@ int32_t oscSend(char oscPacket[], const char oscAddressPattern[], float value, p
 	return oscMessageLength;
 	}
 
-int32_t oscSend(char oscPacket[], const char oscAddressPattern[], char string[], protocol_t protocol) {
+int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], char string[], protocol_t protocol) {
 	char stringBuffer[64];
 	memset (stringBuffer, 0, 64);
 	strcpy(stringBuffer, string);
@@ -99,7 +99,7 @@ int32_t oscSend(char oscPacket[], const char oscAddressPattern[], char string[],
 	return oscMessageLength;
 	}
 
-int32_t oscSend(char oscPacket[], const char oscAddressPattern[], flag_t flag, protocol_t protocol) {
+int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], flag_t flag, protocol_t protocol) {
 	char oscMessage[128];
 	memset (oscMessage, 0, 128);
 	int32_t oscAddressPatternLength;
@@ -122,7 +122,7 @@ int32_t oscSend(char oscPacket[], const char oscAddressPattern[], flag_t flag, p
 	return oscMessageLength;
 	}
 
-int32_t oscSend(char oscPacket[], const char oscAddressPattern[], protocol_t protocol) {
+int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], protocol_t protocol) {
 	char oscMessage[128];
 	memset (oscMessage, 0, 128);
 	int32_t oscAddressPatternLength;
