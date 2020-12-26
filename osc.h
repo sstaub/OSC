@@ -60,7 +60,7 @@ const char ESC_END = 0xDC; // ESC ESC_END means END data byte
 const char ESC_ESC = 0xDD; // ESC ESC_ESC means ESC data byte
 
 typedef enum protocolType {
-	UDP,
+	UDPOSC,
 	TCP10,
 	TCP11
 	} protocol_t;
@@ -72,11 +72,11 @@ typedef enum flagType {
 	I
 } flag_t;
 
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], int32_t value, protocol_t protocol);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], float value, protocol_t protocol);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], char string[], protocol_t protocol);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], flag_t flag, protocol_t protocol);
-int32_t oscSend(char oscPacket[], char oscAddressPattern[], protocol_t protocol);
+int32_t oscSend(char oscPacket[], char oscAddressPattern[], int32_t value, protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], char oscAddressPattern[], float value, protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], char oscAddressPattern[], char string[], protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], char oscAddressPattern[], flag_t flag, protocol_t protocol = UDPOSC);
+int32_t oscSend(char oscPacket[], char oscAddressPattern[], protocol_t protocol = UDPOSC);
 int32_t slipSend(char message[], int32_t messageLength);
 int32_t tcpSend(char message[], int32_t messageLength);
 
