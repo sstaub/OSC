@@ -17,7 +17,7 @@ char oscAddress[64] = "/osc/test";
 char oscMessage[128];
 int16_t oscMessageLength;
 int32_t value = 1;
-oscMessageLength = oscSend(oscMessage, oscAddress, value, UDP);
+oscMessageLength = oscSend(oscMessage, oscAddress, value, UDPOSC);
 osc.beginPacket(IP_ADDRESS_OSC_TX, OSC_PORT_TX);
 osc.write(oscMessage, oscMessageLength);
 osc.endPacket();
