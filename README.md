@@ -32,7 +32,7 @@ osc.endPacket();
 - T, F, N, I flags
 
 ### Protocoll Types
-- UDP
+- UDPOSC
 - TCP10
 - TCP11
 	
