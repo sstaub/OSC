@@ -12,8 +12,8 @@ The **OSC Library** allows you to create OSC (Open Sound Control) messages. Only
 
 Small example for creating an OSC message from a given OSC address pattern, a value and a transport type. It return the length of the OSC message and send it with an UDP instance **osc** of Ethernet.
 
-```
-char oscAddress[64] = "/osc/test";
+```cpp
+uint8_t oscAddress[64] = "/osc/test";
 char oscMessage[128];
 int16_t oscMessageLength;
 int32_t value = 1;
@@ -38,19 +38,19 @@ osc.endPacket();
 	
 ### Functions
 
-**int32_t oscSend(char oscPacket[], char oscAddressPattern[], int32_t value, protocol_t protocol);**<br>
+**int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], int32_t value, protocol_t protocol);**<br>
 for int32 types
 
-**int32_t oscSend(char oscPacket[], char oscAddressPattern[], float value, protocol_t protocol);**<br>
+**int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], float value, protocol_t protocol);**<br>
 for floats
 
-**int32_t oscSend(char oscPacket[], char oscAddressPattern[], char string[], protocol_t protocol);**<br>
+**int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], char string[], protocol_t protocol);**<br>
 for strings
 
-**int32_t oscSend(char oscPacket[], char oscAddressPattern[], flag_t flag, protocol_t protocol);**<br>
+**int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], flag_t flag, protocol_t protocol);**<br>
 for flags
 
-**int32_t oscSend(char oscPacket[], char oscAddressPattern[], protocol_t protocol);**<br>
+**int32_t oscSend(uint8_t oscPacket[], const char oscAddressPattern[], protocol_t protocol);**<br>
 for message without a value or flag
 
 
